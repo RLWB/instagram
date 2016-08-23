@@ -46,7 +46,7 @@
 					<article class="listUserCard">
 						<header class="cardHead">
 							<a class="roundPhoto" href="javascript:;">
-								<img class="roundUserPhoto" src="https://scontent.cdninstagram.com/t51.2885-19/s150x150/12501945_974390425973911_1523368015_a.jpg">
+								<img class="roundUserPhoto" src="img/head.jpg">
 							</a>
 							<div class="cardUser">
 								<a href="">yeungchinwah</a>
@@ -54,15 +54,60 @@
 							<a class="messageTime" href="javascript:;">1小时</a>
 						</header><!-- /header -->
 						<div class="cardImg">
-							<img class="cardUserImg" src="https://scontent.cdninstagram.com/t51.2885-15/e35/13734438_1150760734980654_144870741_n.jpg?ig_cache_key=MTMxOTQyNDQwNjE4MjY5NTUyMw%3D%3D.2">
+							<img class="cardUserImg" src="img/user2.jpg">
 							<!-- <video class="cardUserImg" poster="https://scontent.cdninstagram.com/t51.2885-15/s640x640/e15/14052166_839575616177533_919806798_n.jpg?ig_cache_key=MTMxOTg1ODMxNjc3OTgwMDkzMg%3D%3D.2" preload="none" src="https://scontent.cdninstagram.com/t50.2886-16/14038705_267140927005428_2113723440_n.mp4" type="video/mp4"></video> -->
 						</div>
 						<div class="cardFoot">
 							<section class="cardFTop">
-								<span>
-								1,732
-									<span>次赞</span>
-								</span>
+								<span class="zanAmounts">
+								1,732</span>
+								<span>次赞</span>
+							</section>
+							<ul class="cardFMiddle">
+								<li class="cardFMiddleList">
+									<h1 class="">
+										<a href="">yuyanpeng</a>
+										<span>#謝謝钧甯也來支持危城</span>
+									</h1>
+								</li>
+								<li class="cardFMiddleList">
+									<a href="javascript:;">
+										全部
+										<span>185</span>
+										条评论
+									</a>
+								</li>
+								<li class="cardFMiddleList">
+									<a href="">yuyanpeng</a>
+									<span>#謝謝钧甯也來支持危城</span>
+								</li>
+							</ul>
+							<section class="cardFBottom">
+								<a class="cardFBottomZ" href="javascript:;"></a>
+								<input class="cardFBottomInput" type="text" placeholder="添加评论..." name="">
+								<button class="cardFBottomMore" type="button"></button>
+							</section>
+						</div>
+					</article>
+					<article class="listUserCard">
+						<header class="cardHead">
+							<a class="roundPhoto" href="javascript:;">
+								<img class="roundUserPhoto" src="img/head2.jpg">
+							</a>
+							<div class="cardUser">
+								<a href="">yeungchinwah</a>
+							</div>
+							<a class="messageTime" href="javascript:;">1小时</a>
+						</header><!-- /header -->
+						<div class="cardImg">
+							<img class="cardUserImg" src="img/user.jpg">
+							<!-- <video class="cardUserImg" poster="https://scontent.cdninstagram.com/t51.2885-15/s640x640/e15/14052166_839575616177533_919806798_n.jpg?ig_cache_key=MTMxOTg1ODMxNjc3OTgwMDkzMg%3D%3D.2" preload="none" src="https://scontent.cdninstagram.com/t50.2886-16/14038705_267140927005428_2113723440_n.mp4" type="video/mp4"></video> -->
+						</div>
+						<div class="cardFoot">
+							<section class="cardFTop">
+								<span class="zanAmounts">
+								1,732</span>
+								<span>次赞</span>
 							</section>
 							<ul class="cardFMiddle">
 								<li class="cardFMiddleList">
@@ -94,11 +139,24 @@
 			</div>
 		</section>
 	</content>
-	<footer>
-		
+	<footer class="footer">
+		<div class="footerCon">
+			<ul class="">
+			    <li><a href="javascript:;">关于我们</a></li>
+			    <li><a href="javascript:;">支持</a></li>
+			    <li><a href="javascript:;">博客</a></li>
+			    <li><a href="javascript:;">新闻中心</a></li>
+			    <li><a href="javascript:;">API</a></li>
+			    <li><a href="javascript:;">工作信息</a></li>
+			    <li><a href="javascript:;">隐私</a></li>
+			</ul>
+			<ul>
+			    <li><a href="javascript:;">条款</a></li>
+			    <li><a href="javascript:;">语言</a></li>
+			</ul>
+		</div>
 	</footer>
 	<script>
-		// var that=this;
 		$(function(){
 			$("#search").focus(function(){
 				$(this).css('text-align', 'left');
@@ -124,9 +182,20 @@
 					$(this).remove();
 				});
 			})
+
+
+			$(".cardFBottom").on("click",".cardFBottomZ",function(){
+				var zanAmounts = $(this).parent(".cardFBottom").siblings(".cardFTop").find(".zanAmounts").html();
+				var zanAmounts2 = zanAmounts.replace(/,/g, "");
+
+				var zanAmounts3 = parseInt(zanAmounts2)+1;
+				console.log(zanAmounts3);
+				// var zanAmounts4 = 
+				// console.log(zanAmounts2);
+				// console.log(typeof(zanAmounts2));
+				$(this).parent(".cardFBottom").siblings(".cardFTop").find(".zanAmounts").html(parseInt(zanAmounts3));
+			})
 		})
-		var foo = document.getElementsByTagName('div')[0];
-		foo.onclick=function
 	</script>
 </body>
 </html>
